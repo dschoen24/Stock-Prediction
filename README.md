@@ -1,12 +1,11 @@
 # Clustering & Predicting Stocks
 
-Valense Acquah-Louis
+![image](https://user-images.githubusercontent.com/82990618/138203154-b0c2acab-6dc8-4d16-af2d-7418787e55ab.png)
 
-Saiyid Kazmi
 
-Vasantha Mutyala
+### Contributors: 
+**Vasantha Mutyala (V-MalM) / Valense Acquah-Louis (Tema-2021) / Saiyid Kazmi (saiyidmkazmi)  / Debra Potts (dschoen24)**
 
-Debra Potts
 
 ____________________________________________________________________________________________________________________________________________
 
