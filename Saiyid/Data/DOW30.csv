@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ,Stock,Returns,Volatility,Cluster
 0,JNJ,0.13982219151603592,0.1516369707232496,0
 1,AMGN,-0.0683880740311064,0.2060906180412332,0
@@ -29,3 +30,36 @@
 27,CVX,0.5126241643422463,0.31643769530615845,3
 28,GS,0.7471147741030043,0.2663737941398576,3
 29,JPM,0.5813166407259587,0.2701546256312129,3
+=======
+﻿Symbol,Company
+AXP,American Express Co
+AMGN,Amgen Inc
+AAPL,Apple Inc
+BA,Boeing Co
+CAT,Caterpillar Inc
+CSCO,Cisco Systems Inc
+CVX,Chevron Corp
+GS,Goldman Sachs Group Inc
+HD,Home Depot Inc
+HON,Honeywell International Inc
+IBM,International Business Machines Corp
+INTC,Intel Corp
+JNJ,Johnson & Johnson
+KO,Coca-Cola Co
+JPM,JPMorgan Chase & Co
+MCD,McDonald’s Corp
+MMM,3M Co
+MRK,Merck & Co Inc
+MSFT,Microsoft Corp
+NKE,Nike Inc
+PG,Procter & Gamble Co
+TRV,Travelers Companies Inc
+UNH,UnitedHealth Group Inc
+CRM,Salesforce.Com Inc
+VZ,Verizon Communications Inc
+V,Visa Inc
+WBA,Walgreens Boots Alliance Inc
+WMT,Walmart Inc
+DIS,Walt Disney Co
+DOW,Dow Inc
+>>>>>>> 1615dd3e36fa256fda5277f9ac86b933a7028e4e
