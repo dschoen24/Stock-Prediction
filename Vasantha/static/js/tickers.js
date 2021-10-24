@@ -1,0 +1,3 @@
+data = {
+  "names":["TSLA", "AAPL"]
+}
