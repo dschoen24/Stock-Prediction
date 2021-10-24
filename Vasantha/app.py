@@ -18,7 +18,9 @@ def pred():
     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
     json_url = os.path.join(SITE_ROOT, "static\js", "tickers.json")
     data = json.load(open(json_url))
-    print(json_url)
+    data_s = {x:sorted(data[x]) for x in data.keys()}
+    data = data_s
+    # print(json_url)
     
 
     selected_stock="TSLA"

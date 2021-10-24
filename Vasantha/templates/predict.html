@@ -133,7 +133,14 @@
 
     <div class="row">
 
-     
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <!-- Macroaxis Widget Start<script src="https://www.macroaxis.com/widgets/url.jsp?t=51"></script><div class="macroaxis-copyright"></div>Macroaxis Widget End -->
+          Model Predictions
+          <!-- <iframe src="https://www.tradingview.com/symbols/NASDAQ-AAPL/" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe> -->
+        </div>
+
+      </div>
 
       <div id="predict" class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
         <form action="/predict" method="post" id='myform' role="form" class="php-email-form"> 
@@ -142,7 +149,7 @@
               <label for="name">Select a stock to Predict</label>
               
               <select id="selDataset" name="selDataset"> 
-                {% for ticker in data[0].names %}
+                {% for ticker in data.names %}
                 {%if selected_stock == ticker %}
                 <option value={{ticker}} selected>{{ticker}}</option>
                 {% else %}
