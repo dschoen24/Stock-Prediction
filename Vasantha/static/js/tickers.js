@@ -1,3 +1,0 @@
-data = {
-  "names":["TSLA", "AAPL"]
-}

@@ -1,0 +1,14 @@
+
+[
+  {"ticker":"TSLA", "stock": "Tesla Inc"},
+  {"ticker":"AAPL", "stock": "Apple Inc"},
+  {"ticker":"BAC",  "stock": "Bank of America Corp"},
+  {"ticker":"CVS",  "stock": "CVS Health Corp"},
+  {"ticker":"DOW",  "stock": "Dow Jones Industrial Average"},
+  {"ticker":"FB",   "stock": "Facebook, Inc. Common Stock"},
+  {"ticker":"LOW",  "stock": "Lowe's Companies Inc"},
+  {"ticker":"NDAQ", "stock": "Nasdaq Inc"},
+  {"ticker":"SYY",  "stock": "SYSCO Corporation"},
+  {"ticker":"SBUX",  "stock": "Starbucks Corporation"}
+]
+
