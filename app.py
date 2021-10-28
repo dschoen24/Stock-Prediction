@@ -1,8 +1,6 @@
 from flask import Flask, render_template, redirect, request, url_for
 import json
 from flask.json import jsonify
-from sqlalchemy import create_engine
-import pandas as pd
 import os
 
 import numpy as np
