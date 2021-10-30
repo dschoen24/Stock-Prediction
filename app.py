@@ -38,7 +38,7 @@ def pred():
     img_png = "Images/TSLA.png"
     if request.method == "POST":
         selected_ticker = request.form["selDataset"]
-        img_png = "Images/"+selected_ticker+".png"
+        # img_png = "Images/"+selected_ticker+".png"
         for x in data:
             if(selected_ticker == x['ticker']):
                 selected_stock = x['stock']
@@ -80,10 +80,22 @@ def pred():
         nmpred_price = new_model.predict(X_test)
         nmpred_price = scaler.inverse_transform(nmpred_price)
         nmpred_price = nmpred_price[0][0]
-        print(f"Predicted Closing price for '{selected_stock}' on {next_day} is {nmpred_price:.4f}")
+        #print(f"Predicted Closing price for '{selected_stock}' on {next_day} is {nmpred_price:.4f}")
+
+        d1 = today - timedelta(days=8)
+        d1 = d1.strftime('%Y-%m-%d')
+
+        recent_his = pdr.DataReader(ticker, data_source="yahoo", start=d1)
+        recent_his = recent_his.reset_index()
+        recent_his = recent_his.to_html(index=False)
+        recent_his = recent_his.replace('\n','')
+        recent_his = recent_his.replace('class="dataframe"','class="table tablipede-str"')
+        recent_his = recent_his.replace('<thead>    <tr style="text-align: right;">      <th>0</th>      <th>1</th>    </tr>  </thead>','')
+        
+        
 
     return render_template("predict.html", data=data, selected_ticker=selected_ticker, \
-            selected_stock=selected_stock, img_png=img_png, nmpred_price=nmpred_price) 
+            selected_stock=selected_stock, nmpred_price=nmpred_price, recent_his=recent_his, today=today) 
 
         
 if __name__ == "__main__":

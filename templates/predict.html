@@ -143,7 +143,7 @@
     <div id="section-title" class="section-title">
       <br />
       <h2>Predict</h2>
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      <p>Stock trading is inherently risky and you agree to assume complete and full responsibility for the outcomes of all trading decisions that you make, including but not limited to loss of capital.</p>
     </div>
 
     <div class="row">
@@ -154,6 +154,7 @@
         <form action="/predict" method="post" id='myform' role="form" class="php-email-form"> 
           <div class="row">
             <div class="form-group col-md-6"> <!--input-group"-->
+             
               <label for="name">Select a stock to Predict&nbsp;&nbsp;&nbsp;&nbsp;</label>
     
               <select id="selDataset" name="selDataset"> 
@@ -196,8 +197,14 @@
       <div class="col-lg-5 d-flex align-items-stretch">
         <div class="info">
           <!-- Macroaxis Widget Start<script src="https://www.macroaxis.com/widgets/url.jsp?t=51"></script><div class="macroaxis-copyright"></div>Macroaxis Widget End -->
-          Prediction<br />
+          Predicted Next Day Closing Price <br />
           <h2 class="blink">{{nmpred_price}}</h2>
+          <br />
+          <h4>Recent Price History</h4>
+          <div class="table-responsive-md table-responsive-lg" style="font-size: x-small;">
+             {{ recent_his | safe }}
+          </div>
+          
           <!-- <img width="100%", src="{{url_for('static', filename = img_png)}}"> -->
           <!-- <iframe src="https://www.tradingview.com/symbols/NASDAQ-AAPL/" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe> -->
         </div>
