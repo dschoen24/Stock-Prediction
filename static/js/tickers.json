@@ -9,6 +9,7 @@
   {"ticker":"LOW",  "stock": "Lowe's Companies Inc"},
   {"ticker":"NDAQ", "stock": "Nasdaq Inc"},
   {"ticker":"SYY",  "stock": "SYSCO Corporation"},
-  {"ticker":"SBUX",  "stock": "Starbucks Corporation"}
+  {"ticker":"SBUX",  "stock": "Starbucks Corporation"},
+  {"ticker":"PTON",  "stock": "Peloton Interactive Inc"}
 ]
 

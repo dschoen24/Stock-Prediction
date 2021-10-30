@@ -21,6 +21,10 @@ def home():
 def stocks():
     return render_template('stocks.html')
 
+@app.route("/stocksP")
+def stocksP():
+    return render_template('stocks_2.html')    
+
 @app.route("/team")
 def team():
     return render_template('team.html')    
@@ -99,4 +103,4 @@ def pred():
 
         
 if __name__ == "__main__":
-    app.run(debug=True, port=8000,use_reloader=False)
+    app.run(debug=True, port=5000,use_reloader=False)
