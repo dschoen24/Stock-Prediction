@@ -263,7 +263,7 @@ The original scatter plot (S&P500) of the data as it has the outliers we do not 
 Using quartiles, the upper and lower bounds of the returns and volatilities of the dataset.
 The records above and below the upper and lower bounds were removed to obtain a new dataset. This dataset was then scaled and clustered using KMeans and an elbow curve was plotted.
 
-When a scatter plot of the dataset with no outliers was plotted (One in the center), clear clusters can be seen.
+When a scatter plot of the dataset with no outliers was plotted (One in the center), clear clusters were seen.
 
 ![homepage 2021-10-30 175633](static/Images/clusters.png)
 <!-- ![homepage 2021-10-30 175633](static/Images/SNPClusters_NO.png)
