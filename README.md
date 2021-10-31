@@ -61,70 +61,13 @@ ________________________________________________________________________________
 * Seasonality (variations specific to a particular time frame)
 
 ## Our Timeseries analysis includes 
+* Forecasting
+    * Used LSTM time series to forcast next day's close price    
 
 * Pattern and outlier detection 
     * Used clustering to make diverse stock portfolios by detecting patterns in stocks that move similarly with an underlying trend i.e., for an given period of time how stocks trend together. The analysis was based on 3 indices S&P 500, NASDAQ 100 and DOW 30.
-* Forecasting
-    * Used LSTM time series to forcast next day's close price    
-## 
-
-## K-Means Clustering
-Clustering is an Unsupervised Machine Learning process that splits a dataset or observations into groups that are like each other.
-The clustering was performed on the datasets using K-Means and PCA on 3 different calculated features.
-* Movement
-* Percent Change
-* Volatility
-
-K-Means is an SkLearn/ SciKit-Learn model. This model aims to group several observations / datasets into clusters (K-Clusters) where each observation within the cluster shares similarities like
-* Mean
-* Variance
-* Patterns etc.
-K-Means identifies the number of centroids in the dataset then assigns the nearest cluster where the centroids remain as small as possible.
-
-## K-Means Cluster Analysis on Stock Data
-
-### Movement  
-[Click here for Code](/Cluster_Model_Code/ClusteringStocksByChange_SP500.ipynb)   
-Movement is a measure of identifying the trend direction of a stock. It is measured by determining the average changes in open and close price of the stock to help determine if the stock is going in an uptrend (rising movement) or downtrend (declining movement). 
-
-Using Movement as a feature, clustering was performed on the three stock indices resulting in charts displayed here. 
-![movement 2021-10-30 184612](https://user-images.githubusercontent.com/82990618/139561359-90885015-fd48-4e9c-a0ee-6246f1de85e5.png)
-
-From the image of the various indices S&P500 and NASDAQ100 can be grouped into 5 clusters to represent the various stocks that are moving in the same direction whereas DOW30 has 3 clusters.
-
-### Percentage Change And Volatility
-[Click here for Code](/Cluster_Model_Code/Clustering_Stocks_corrected.ipynb)   
-Percent change measures the difference of closing price from the beginning of a time period to the end of a time period.  
-Volatility is the reflection of the degree to which price moves. Volatility was calculated using Standard Deviation.
-These two features were used to perform clustering on each of the indices.
-Clustering helps to identify the stocks that are showing an uptrend and the ones that are showing downtrend. 
 
 
-**Visualization**  
-Within Tableau,two separate Treemap charts were created for each of the indices - S&P 500, Nasdaq 100 and Dow 30.
-The first Treemap chart is based on Market Movement (the change in share prices based on supply & demand) which we categorized by color diversity for each cluster within the index. 
-The second Treemap chart is based on percent change (returns) and volatility which we also categorized by color diversity for each cluster within the index.  
-![homepage 2021-10-30 175633](Images/Nasdaq100Tab.png)
-
-
-### Outliers 
-[Click here for Code](/Cluster_Model_Code/Clustering_Stocks_corrected_sp500_outlier.ipynb)  
-Outliers for our project were stocks that differ from all the other stocks so are detached from the other stocks.
-looking at the percent change and volatility Treemaps for S&P500, it was observed that the data was skewed. The treemap on the right is representing the data after being reclustered.
-![homepage 2021-10-30 175633](Images/outliers.png)
-
-How skewed data can affect the clustering? What steps can be taken to separate the outliers and get better clusters without compromising our Data.
-
-The original scatter plot (S&P500) of the data as it has the outliers we do not get a clear or distinct visualization of our clusters due to the outliers. So steps were taken to separate the clusters. 
-
-Using quartiles, the upper and lower bounds of the returns and volatilities of the dataset.
-The records above and below the upper and lower bounds were removed to obtain a new dataset. This dataset was then scaled and clustered using KMeans and an elbow curve was plotted.
-
-A scatter plot of the dataset with no outliers was plotted and clear clusters can be seen.
-
-![homepage 2021-10-30 175633](static/Images/SNPClusters.png)
-![homepage 2021-10-30 175633](static/Images/SNPClusters_NO.png)
-![homepage 2021-10-30 175633](static/Images/SNPClusters_O.png)
 
 ## Time Series Forecasting
 We built a LSTM model to predict next day closing price for a given stock.
@@ -267,3 +210,62 @@ Below is a quick demonstration of how our model has predicted.
 ![homepage 2021-10-30 175633](static/Images/PRED.png)
 
 ![homepage 2021-10-30 175633](static/Images/webP.png)
+
+
+## K-Means Clustering
+Clustering is an Unsupervised Machine Learning process that splits a dataset or observations into groups that are like each other.
+The clustering was performed on the datasets using K-Means and PCA on 3 different calculated features.
+* Movement
+* Percent Change
+* Volatility
+
+K-Means is an SkLearn/ SciKit-Learn model. This model aims to group several observations / datasets into clusters (K-Clusters) where each observation within the cluster shares similarities like
+* Mean
+* Variance
+* Patterns etc.
+K-Means identifies the number of centroids in the dataset then assigns the nearest cluster where the centroids remain as small as possible.
+
+## K-Means Cluster Analysis on Stock Data
+
+### Movement  
+[Click here for Code](/Cluster_Model_Code/ClusteringStocksByChange_SP500.ipynb)   
+Movement is a measure of identifying the trend direction of a stock. It is measured by determining the average changes in open and close price of the stock to help determine if the stock is going in an uptrend (rising movement) or downtrend (declining movement). 
+
+Using Movement as a feature, clustering was performed on the three stock indices resulting in charts displayed here. 
+![movement 2021-10-30 184612](https://user-images.githubusercontent.com/82990618/139561359-90885015-fd48-4e9c-a0ee-6246f1de85e5.png)
+
+From the image of the various indices S&P500 and NASDAQ100 can be grouped into 5 clusters to represent the various stocks that are moving in the same direction whereas DOW30 has 3 clusters.
+
+### Percentage Change And Volatility
+[Click here for Code](/Cluster_Model_Code/Clustering_Stocks_corrected.ipynb)   
+Percent change measures the difference of closing price from the beginning of a time period to the end of a time period.  
+Volatility is the reflection of the degree to which price moves. Volatility was calculated using Standard Deviation.
+These two features were used to perform clustering on each of the indices.
+Clustering helps to identify the stocks that are showing an uptrend and the ones that are showing downtrend. 
+
+
+**Visualization**  
+Within Tableau,two separate Treemap charts were created for each of the indices - S&P 500, Nasdaq 100 and Dow 30.
+The first Treemap chart is based on Market Movement (the change in share prices based on supply & demand) which we categorized by color diversity for each cluster within the index. 
+The second Treemap chart is based on percent change (returns) and volatility which we also categorized by color diversity for each cluster within the index.  
+![homepage 2021-10-30 175633](Images/Nasdaq100Tab.png)
+
+
+### Outliers 
+[Click here for Code](/Cluster_Model_Code/Clustering_Stocks_corrected_sp500_outlier.ipynb)  
+Outliers for our project were stocks that differ from all the other stocks so are detached from the other stocks.
+looking at the percent change and volatility Treemaps for S&P500, it was observed that the data was skewed. The treemap on the right is representing the data after being reclustered.
+![homepage 2021-10-30 175633](Images/outliers.png)
+
+How skewed data can affect the clustering? What steps can be taken to separate the outliers and get better clusters without compromising our Data.
+
+The original scatter plot (S&P500) of the data as it has the outliers we do not get a clear or distinct visualization of our clusters due to the outliers. So steps were taken to separate the clusters. 
+
+Using quartiles, the upper and lower bounds of the returns and volatilities of the dataset.
+The records above and below the upper and lower bounds were removed to obtain a new dataset. This dataset was then scaled and clustered using KMeans and an elbow curve was plotted.
+
+A scatter plot of the dataset with no outliers was plotted and clear clusters can be seen.
+
+![homepage 2021-10-30 175633](static/Images/SNPClusters.png)
+![homepage 2021-10-30 175633](static/Images/SNPClusters_NO.png)
+![homepage 2021-10-30 175633](static/Images/SNPClusters_O.png)
