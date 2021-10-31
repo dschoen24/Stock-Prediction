@@ -85,7 +85,7 @@ Our model is built on using 5 years of data.
 **Moving window explained:**  
 In our project, the first data point is the first 120 days of data.
 The second data point is the first 121 days of data but not including the first.
-The third data point is the first 122 days of data but not including the first and second. And this pattern continues for all the dates of the given period (5+ years).
+The third data point is the first 122 days of data but not including the first and second. And this pattern continues for all the dates of the given period.
 
 **Code - Step By Step:**  
 [Click here for complete Code](/Cluster_Model_Code/Model_Create_Train_Save_Test_break_SBUX.ipynb)  
