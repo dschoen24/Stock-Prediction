@@ -109,6 +109,25 @@ The third data point is the first 122 days of data but not including the first a
 **Data prep**  
 
 Reads real-time data from Yahoo Finance and read it into a Dataframe using Pandas Datareader.
+
+``` python
+#Get the stock
+ticker = 'SBUX'
+stock ="Starbucks Corporation"
+# n days, here we will use n  days historical data to predict next day closing
+ts_points = 120
+
+
+today = datetime.today()
+
+# 5 years of stock data to be retrived
+start_date = (today - timedelta(days=5*365) ).strftime('%Y-%m-%d')
+
+end_date = (today - timedelta(days=62) ).strftime('%Y-%m-%d')
+
+stock_df = pdr.DataReader(ticker, data_source="yahoo", start=start_date, end=end_date)
+```
+
 Checked to make sure Date is index.
 Checked for nulls and sort data on Date(index) just to be sure it is in ascending order.
 Close price has been used for our analysis. 
