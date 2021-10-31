@@ -266,4 +266,4 @@ Below is a quick demonstration of how our model has predicted.
 
 ![homepage 2021-10-30 175633](static/Images/PRED.png)
 
-![homepage 2021-10-30 175633](static/Images/web2.png)
+![homepage 2021-10-30 175633](static/Images/webP.png)
