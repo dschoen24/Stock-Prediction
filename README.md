@@ -201,11 +201,6 @@ model.save('Saved_Models/Model_'+ticker+'.h5')
 
 Then we built our test data set .
 ``` python
-
-```
-
-Then we built our test data set .
-``` python
 # test_data = scaled_data[training_data_len:]
 
 # Bring in the last  (120 values) from training set so when X_test is used to predict , predictions have same shape as Y_test
