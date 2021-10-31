@@ -1,4 +1,4 @@
-# Project-4
+# Stock Prediction
 ____________________________________________________
 ## Stock Clustering and Prediction : A Machine Learning Project
 
@@ -53,10 +53,14 @@ Movement is a measure of identifying the trend direction of a stock and this hel
  From the image of the various indices S&P500 and NASDAQ100 can be grouped into 5 clusters to represent the various stocks that are moving in the same direction whereas DOW30 has 3 clusters.
  
  #### TABLEU
- Within Tableau, we created two separate  Treemap charts for each of our indices - S&P 500, Nasdaq 100 and Dow 30.  
+Within Tableau, we created two separate  Treemap charts for each of our indices - S&P 500, Nasdaq 100 and Dow 30.  
+
 Our first Treemap chart is based on Market Movement (the change in share prices based on supply & demand) which we categorized by color diversity for each cluster within the index.  
+
 For this first Treemap chart, we used the ticker name of each stock and the attribute Company as our labels, the attribute Cluster as our color diversity and included the attribute Movement as the size of each branch.  On our webpage, when hovering over a specific branch on the webpage, it will show the stock symbol, company name and show what cluster that specific stock belongs to.
+
 Our second Treemap chart is based on percent change (returns) and volatility which we also categorized by color diversity for each cluster within the index.  Percent change measures the difference of closing price from the beginning of a time period to the end of a time period.  We chose a time period of 2 years.  Volatility in this Treemap chart is the reflection of the degree to which price moves.  We calculated the volatility using Standard Deviation.
+
 For this second Treemap chart, we used the Stock name as our label, the attribute Cluster as our color diversity and included the attribute Returns as the size of each branch.  Within our website, when hovering over a branch, it will list the stock by symbol & company name, give you the numbered cluster to which it belongs and list the return percentage.
 
 
