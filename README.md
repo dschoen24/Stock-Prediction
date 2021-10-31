@@ -1,6 +1,4 @@
-# Project-4
-____________________________________________________
-## Stock Clustering and Prediction : A Machine Learning Project
+## Stock Clustering and Prediction
 
 ____________________________________________________
 
@@ -9,7 +7,7 @@ ____________________________________________________
 ## Contributors: 
 **Vasantha Mutyala (V-MalM) / Valense Acquah-Louis (Tema-2021) / Saiyid Kazmi (saiyidmkazmi)  / Debra Potts (dschoen24)**
 
-[CLICK HERE TO DOWNLOAD SLIDE DECK(/Presentation) 
+[CLICK HERE TO DOWNLOAD SLIDE DECK](/Presentation) 
 
 
 ## Objective
