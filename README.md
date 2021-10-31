@@ -60,6 +60,8 @@ From the image of the various indices S&P500 and NASDAQ100 can be grouped into 5
 ### Percentage Change And Volatility
 Percent change measures the difference of closing price from the beginning of a time period to the end of a time period.  
 Volatility is the reflection of the degree to which price moves. Volatility was calculated using Standard Deviation.
+These two features were used to perform clustering on each of the indices.
+Clustering helps to identify the stocks that are showing an uptrend and the ones that are showing downtrend. 
 
 
 **Visualization**  
@@ -74,7 +76,7 @@ Outliers for our project were stocks that differ from all the other stocks so ar
 looking at the percent change and volatility Treemaps for S&P500, it was observed that the data was skewed. The treemap on the right is representing the data after being reclustered.
 ![homepage 2021-10-30 175633](Images/outliers.png)
 
-Does the skewed data can affect the clustering? What steps can be taken to separate the outliers and get better clusters without compromising our Data.
+How skewed data can affect the clustering? What steps can be taken to separate the outliers and get better clusters without compromising our Data.
 
 The original scatter plot (S&P500) of the data as it has the outliers we do not get a clear or distinct visualization of our clusters due to the outliers. So steps were taken to separate the clusters. 
 
