@@ -9,6 +9,8 @@ ____________________________________________________
 ## Contributors: 
 **Vasantha Mutyala (V-MalM) / Valense Acquah-Louis (Tema-2021) / Saiyid Kazmi (saiyidmkazmi)  / Debra Potts (dschoen24)**
 
+**Presentation can be found in** [Presentation](/Presentation) 
+
 ## Objective
 * The essence of this project is incorporating the magic of Machine Learning in the realm of stock analysis, a daunting task itself. Investing in stocks continues to be risky because of their unpredictable nature. Some factors that contibue to this uncertainity are human phycology, natural calamities, change in political scene, pandamic, war etc.
 We will be doing a technical analysis for this project.
