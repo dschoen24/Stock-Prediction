@@ -27,11 +27,13 @@ Our final objective is to visualize the results of not only clustering stocks wi
 
 ## Our Timeseries analysis includes 
 
-## Pattern and outlier detection 
-* Used clustering to make diverse stock portfolios by detecting patterns in stocks that move similarly with an underlying trend i.e., for an given period of time how stocks trend together. The analysis was based on 3 indices S&P 500, NASDAQ 100 and DOW 30.
+* Pattern and outlier detection 
+    * Used clustering to make diverse stock portfolios by detecting patterns in stocks that move similarly with an underlying trend i.e., for an given period of time how stocks trend together. The analysis was based on 3 indices S&P 500, NASDAQ 100 and DOW 30.
+* Forecasting
+    * Used LSTM time series to forcast next day's close price    
+## 
 
-<details>
-<summary><strong><h2>Click here for K-Means Clustering</h2></strong></summary>
+## K-Means Clustering
 Clustering is an Unsupervised Machine Learning process that splits a dataset or observations into groups that are like each other.
 The clustering was performed on the datasets using K-Means and PCA on 3 different calculated features.
 * Movement
@@ -44,7 +46,8 @@ K-Means is an SkLearn/ SciKit-Learn model. This model aims to group several obse
 * Patterns etc.
 K-Means identifies the number of centroids in the dataset then assigns the nearest cluster where the centroids remain as small as possible.
 
-<!-- ![Elbow curve 2021-10-30 183509](https://user-images.githubusercontent.com/82990618/139561275-70072bc9-a4d7-4903-8d27-c714cd93df98.png) -->
+<details>
+<summary><strong><h2>Click here for K-Means Cluster Analysis on Stock data</h2></strong></summary>
 
 ### Movement
 
@@ -88,7 +91,7 @@ A scatter plot of the dataset with no outliers was plotted and clear clusters ca
 </details>
 
 <details>
-<summary><strong><h2>Click here for Forecasting</h2></strong></summary>
+<summary><strong><h2>Click here for Time Series Forecasting</h2></strong></summary>
 We built a LSTM model to predict next day closing price for a given stock.
 
 ## Why LSTM?
@@ -224,3 +227,5 @@ Below is a quick demonstration of how our model has predicted.
 
 ![homepage 2021-10-30 175633](static/Images/PRED.png)
 </details>
+
+![homepage 2021-10-30 175633](static/Images/web2.png)
