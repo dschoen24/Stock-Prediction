@@ -114,9 +114,9 @@ Reads real-time data from Yahoo Finance and read it into a Dataframe using Panda
 #Get the stock
 ticker = 'SBUX'
 stock ="Starbucks Corporation"
+
 # n days, here we will use n  days historical data to predict next day closing
 ts_points = 120
-
 
 today = datetime.today()
 
@@ -128,10 +128,23 @@ end_date = (today - timedelta(days=62) ).strftime('%Y-%m-%d')
 stock_df = pdr.DataReader(ticker, data_source="yahoo", start=start_date, end=end_date)
 ```
 
-Checked to make sure Date is index.
-Checked for nulls and sort data on Date(index) just to be sure it is in ascending order.
-Close price has been used for our analysis. 
-Isolated ‘Close’ Price from dataset and converted into an array.
+
+``` python
+# Checked for nulls and sort data on Date(index) just to be sure it is in ascending order.
+# Date is an index but to be sure , let's sort
+stock_df = stock_df.sort_index(ascending=True)
+
+# check for nulls
+stock_df.isna().sum()
+```
+
+``` python
+#Close price has been used for our analysis. 
+# Isolated ‘Close’ Price from dataset and converted into an array.
+# DF with only close
+TSdata_df = stock_df.filter(['Close'])
+TSdata_arr = TSdata_df.values # this creates an array of Close Price
+```
 
 Performed adfuller test to check if our data is stationary or non-stationary. We are doing this to see how well the model would perform even on a non-stationary dataset.
 
