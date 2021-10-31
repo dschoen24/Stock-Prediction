@@ -87,7 +87,7 @@ In our project, the first data point is the first 120 days of data.
 The second data point is the first 121 days of data but not including the first.
 The third data point is the first 122 days of data but not including the first and second. And this pattern continues for all the dates of the given period (5+ years).
 
-
+**Code - Step By Step:**  
 [Click here for complete Code](/Cluster_Model_Code/Model_Create_Train_Save_Test_break_SBUX.ipynb)  
 
 **Data prep**  
@@ -164,6 +164,17 @@ X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
 
 **Build LSTM Model**  
 We built an LSTM with 2 layers, each with 50 nodes, a dropout layer, 1 dense layer and one output layer with one unit.
+
+**Tuning**
+Dropout, batch size and epochs were adjusted while training the model.
+
+* "**DROPOUT** is a regularization method where input and recurrent connections to LSTM units are  excluded from activation and weight updates while training a network. This has the effect of reducing overfitting and improving model performance." --machinelearningmastery.com
+
+* "For models like LSTM, the **BATCH SIZE** is critical to learn the common patterns as important features. For a model to be able to figure out what are the common patterns and features across the input train samples we need to provide the samples as batches.
+By providing, a number of samples, a batch at a time, we can introduce a set of samples to the model so the model can distinguish the common features by looking at all the introduced samples of the batch." --medium.com
+
+* "The number of **EPOCHS** is a hyperparameter that defines the number times that the learning algorithm will work through the entire training dataset. One epoch means that each sample in the training dataset has had an opportunity to update the internal model parameters. An epoch is comprised of one or more batches." --machinelearningmastery.com
+
 ``` python
 model = tf.keras.models.Sequential()
 model.add(tf.keras.layers.LSTM(50, return_sequences=True, input_shape=(X_train.shape[1],1)))
