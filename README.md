@@ -69,7 +69,8 @@ The second Treemap chart is based on percent change (returns) and volatility whi
 
 ### Outliers 
 Outliers for our project were stocks that differ from all the other stocks so are detached from the other stocks.
-looking at the percent change and volatility Treemaps for S&P500, it was observed that the data was skewed.
+looking at the percent change and volatility Treemaps for S&P500, it was observed that the data was skewed. The treemap on the right is representing the data after being reclustered.
+![homepage 2021-10-30 175633](Images/outliers.png)
 
 Does the skewed data can affect the clustering? What steps can be taken to separate the outliers and get better clusters without compromising our Data.
 
@@ -84,7 +85,7 @@ A scatter plot of the dataset with no outliers was plotted and clear clusters ca
 ![homepage 2021-10-30 175633](static/Images/SNPClusters_NO.png)
 ![homepage 2021-10-30 175633](static/Images/SNPClusters_O.png)
 
-![homepage 2021-10-30 175633](Images/outliers.png)
+
 
 </details>
 
