@@ -139,32 +139,86 @@ stock_df.isna().sum()
 ```
 
 ``` python
-#Close price has been used for our analysis. 
+# Close price has been used for our analysis. 
 # Isolated ‘Close’ Price from dataset and converted into an array.
 # DF with only close
 TSdata_df = stock_df.filter(['Close'])
 TSdata_arr = TSdata_df.values # this creates an array of Close Price
 ```
 
-Performed adfuller test to check if our data is stationary or non-stationary. We are doing this to see how well the model would perform even on a non-stationary dataset.
+**Scale the data and split**  
+``` python
+# Scale the Data
+scaler = MinMaxScaler(feature_range =(0,1))
+scaled_data = scaler.fit_transform(TSdata_arr)
+# split
+training_data_len = math.ceil(len(TSdata_arr) * 0.75)
+training_data_len
+# Created scaled training dataset
+train_data = scaled_data[0:training_data_len]
 
-**Scale the data**  
-Split Data , we did a 75%, 25% split
+```
 
 
-**Build X_train, y_train following moving window method**  
+**Build X_train, y_train following moving window method** 
+``` python
+X_train = []
+y_train = []
+
+for i in range(ts_points, len(train_data)):
+    X_train.append(train_data[i-ts_points:i,0])
+    y_train.append(train_data[i,0])
+```     
 #### convert X_train and y_train to numpy arrays for LSTM
 #### LSTM network expects a 3D input (No_of_Samples, number of time steps, and number of features) no_of_features = 1 (Close)
 
+``` python
 X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
+```
 
 **Build LSTM Model**  
 We built an LSTM with 2 layers, each with 50 nodes, a dropout layer, 1 dense layer and one output layer with one unit.
+``` python
+model = tf.keras.models.Sequential()
+model.add(tf.keras.layers.LSTM(50, return_sequences=True, input_shape=(X_train.shape[1],1)))
+model.add(tf.keras.layers.LSTM(50, return_sequences=False))
+model.add(tf.keras.layers.Dropout(0.2))
+model.add(tf.keras.layers.Dense(25))
+model.add(tf.keras.layers.Dense(1))
+```
+
 Used 'adam' as optimizer, 'mean_squared_error' as loss function 
 Trained our Model
+``` python
+model.compile(optimizer='adam', loss='mean_squared_error')
+model.fit(X_train, y_train, batch_size=64 ,epochs=30)
+```
 
 After testing accuracy, we saved our model. 
+``` python
+model.save('Saved_Models/Model_'+ticker+'.h5')
+```
+
 Then we built our test data set .
+``` python
+
+```
+
+Then we built our test data set .
+``` python
+# test_data = scaled_data[training_data_len:]
+
+# Bring in the last  (120 values) from training set so when X_test is used to predict , predictions have same shape as Y_test
+# The for loop starts with 'ts_points' that means the resultant array will have 120 less rows
+test_data = scaled_data[training_data_len-ts_points:]
+X_test = []
+y_test = TSdata_arr[training_data_len:]
+for i in range(ts_points, len(test_data)):
+    X_test.append(test_data[i-ts_points:i,0])
+# convert the data to a numpy array to use it in LSTM MODEL
+X_test = np.array(X_test)
+X_test = np.reshape(X_test, (X_test.shape[0],  X_test.shape[1], 1))    
+```
 
 Predicted price for X_test.
 Calculated root mean square error for both training and test data.
@@ -173,5 +227,5 @@ Compared predited close price with actual close price.
 Plotted training, test and actual data.
 Below is a quick demonstration of how our model has predicted.
 
-
+![homepage 2021-10-30 175633](static/Images/PRED.png)
 </details>
