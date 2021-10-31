@@ -94,8 +94,7 @@ A scatter plot of the dataset with no outliers was plotted and clear clusters ca
 
 ## Time Series Forecasting
 We built a LSTM model to predict next day closing price for a given stock.
-[Click here for Code](/Cluster_Model_Code/Model_Create_Train_Save_Test_break_SBUX
-.ipynb)  
+
 
 ## Why LSTM?
 Traditionally, models like ARIMA (AutoRegressive Integrated Moving Average) has been used for time series analysis. ARIMA requires data to be stationary by removing trend and seasonality. LSTM, on the other hand, can work with non-stationary data and hence, its was our choice.
@@ -112,6 +111,8 @@ In our project, the first data point is the first 120 days of data.
 The second data point is the first 121 days of data but not including the first.
 The third data point is the first 122 days of data but not including the first and second. And this pattern continues for all the dates of the given period (5+ years).
 
+
+[Click here for complete Code](/Cluster_Model_Code/Model_Create_Train_Save_Test_break_SBUX.ipynb) 
 **Data prep**  
 
 Read real-time data from Yahoo Finance into a Dataframe using Pandas Datareader.
