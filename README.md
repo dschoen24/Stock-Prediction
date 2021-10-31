@@ -108,7 +108,8 @@ today = datetime.today()
 start_date = (today - timedelta(days=5*365) ).strftime('%Y-%m-%d')
 
 # to make sure the test and train data is different from data we use to predict , 
-# we are bringing last 5 years minus 2 months
+# we are bringing last 5 years minus 2 months. Because it is a stock prediction, this window might have to be much smaller because stocks fluctuate quite often. We have written the code in such way that this value can be changed depending on how often this module would have to be retrained. 
+# We have tried with 0(no gap), 31 days and 62 days. All of these predicted very close with slight tuning of hyperperameters.
 end_date = (today - timedelta(days=62) ).strftime('%Y-%m-%d')
 
 stock_df = pdr.DataReader(ticker, data_source="yahoo", start=start_date, end=end_date)
