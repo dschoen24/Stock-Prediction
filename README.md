@@ -9,7 +9,8 @@ ____________________________________________________
 ## Contributors: 
 **Vasantha Mutyala (V-MalM) / Valense Acquah-Louis (Tema-2021) / Saiyid Kazmi (saiyidmkazmi)  / Debra Potts (dschoen24)**
 
-**Presentation can be found in** [Presentation](/Presentation) 
+[CLICK HERE TO DOWNLOAD SLIDE DECK(/Presentation) 
+
 
 ## Objective
 * The essence of this project is incorporating the magic of Machine Learning in the realm of stock analysis, a daunting task itself. Investing in stocks continues to be risky because of their unpredictable nature. Some factors that contibue to this uncertainity are human phycology, natural calamities, change in political scene, pandamic, war etc.
@@ -50,8 +51,8 @@ K-Means identifies the number of centroids in the dataset then assigns the neare
 
 ## K-Means Cluster Analysis on Stock Data
 
-### Movement
-
+### Movement  
+[Click here for Code](/Cluster_Model_Code/ClusteringStocksByChange_SP500.ipynb)   
 Movement is a measure of identifying the trend direction of a stock. It is measured by determining the average changes in open and close price of the stock to help determine if the stock is going in an uptrend (rising movement) or downtrend (declining movement). 
 
 Using Movement as a feature, clustering was performed on the three stock indices resulting in charts displayed here. 
@@ -60,6 +61,7 @@ Using Movement as a feature, clustering was performed on the three stock indices
 From the image of the various indices S&P500 and NASDAQ100 can be grouped into 5 clusters to represent the various stocks that are moving in the same direction whereas DOW30 has 3 clusters.
 
 ### Percentage Change And Volatility
+[Click here for Code](/Cluster_Model_Code/Clustering_Stocks_corrected.ipynb)   
 Percent change measures the difference of closing price from the beginning of a time period to the end of a time period.  
 Volatility is the reflection of the degree to which price moves. Volatility was calculated using Standard Deviation.
 These two features were used to perform clustering on each of the indices.
@@ -74,6 +76,7 @@ The second Treemap chart is based on percent change (returns) and volatility whi
 
 
 ### Outliers 
+[Click here for Code](/Cluster_Model_Code/Clustering_Stocks_corrected_sp500_outlier.ipynb)  
 Outliers for our project were stocks that differ from all the other stocks so are detached from the other stocks.
 looking at the percent change and volatility Treemaps for S&P500, it was observed that the data was skewed. The treemap on the right is representing the data after being reclustered.
 ![homepage 2021-10-30 175633](Images/outliers.png)
@@ -93,6 +96,8 @@ A scatter plot of the dataset with no outliers was plotted and clear clusters ca
 
 ## Time Series Forecasting
 We built a LSTM model to predict next day closing price for a given stock.
+[Click here for Code](/Cluster_Model_Code/Model_Create_Train_Save_Test_break_SBUX
+.ipynb)  
 
 ## Why LSTM?
 Traditionally, models like ARIMA (AutoRegressive Integrated Moving Average) has been used for time series analysis. ARIMA requires data to be stationary by removing trend and seasonality. LSTM, on the other hand, can work with non-stationary data and hence, its was our choice.
@@ -111,7 +116,7 @@ The third data point is the first 122 days of data but not including the first a
 
 **Data prep**  
 
-Reads real-time data from Yahoo Finance and read it into a Dataframe using Pandas Datareader.
+Read real-time data from Yahoo Finance into a Dataframe using Pandas Datareader.
 
 ``` python
 #Get the stock
@@ -126,6 +131,8 @@ today = datetime.today()
 # 5 years of stock data to be retrived
 start_date = (today - timedelta(days=5*365) ).strftime('%Y-%m-%d')
 
+# to make sure the test and train data is different from data we use to predict , 
+# we are bringing last 5 years minus 2 months
 end_date = (today - timedelta(days=62) ).strftime('%Y-%m-%d')
 
 stock_df = pdr.DataReader(ticker, data_source="yahoo", start=start_date, end=end_date)
@@ -199,15 +206,13 @@ model.fit(X_train, y_train, batch_size=64 ,epochs=30)
 
 After testing accuracy, we saved our model. 
 ``` python
-model.save('Saved_Models/Model_'+ticker+'.h5')
+model.save('../assets/Model_'+ticker+'.h5')
 ```
 
 Then we built our test data set .
 ``` python
-# test_data = scaled_data[training_data_len:]
-
 # Bring in the last  (120 values) from training set so when X_test is used to predict , predictions have same shape as Y_test
-# The for loop starts with 'ts_points' that means the resultant array will have 120 less rows
+# The for loop starts with 'ts_points' that means the resultant array will have 120 less rows and hense the above step
 test_data = scaled_data[training_data_len-ts_points:]
 X_test = []
 y_test = TSdata_arr[training_data_len:]
