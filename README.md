@@ -46,8 +46,7 @@ K-Means is an SkLearn/ SciKit-Learn model. This model aims to group several obse
 * Patterns etc.
 K-Means identifies the number of centroids in the dataset then assigns the nearest cluster where the centroids remain as small as possible.
 
-<details>
-<summary><strong><h2>Click here for K-Means Cluster Analysis on Stock data</h2></strong></summary>
+## K-Means Cluster Analysis on Stock Data
 
 ### Movement
 
@@ -88,10 +87,7 @@ A scatter plot of the dataset with no outliers was plotted and clear clusters ca
 ![homepage 2021-10-30 175633](static/Images/SNPClusters_NO.png)
 ![homepage 2021-10-30 175633](static/Images/SNPClusters_O.png)
 
-</details>
-
-<details>
-<summary><strong><h2>Click here for Time Series Forecasting</h2></strong></summary>
+## Time Series Forecasting
 We built a LSTM model to predict next day closing price for a given stock.
 
 ## Why LSTM?
@@ -226,6 +222,5 @@ Plotted training, test and actual data.
 Below is a quick demonstration of how our model has predicted.
 
 ![homepage 2021-10-30 175633](static/Images/PRED.png)
-</details>
 
 ![homepage 2021-10-30 175633](static/Images/web2.png)
