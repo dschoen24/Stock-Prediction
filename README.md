@@ -8,7 +8,7 @@ ____________________________________________________
 **Vasantha Mutyala (V-MalM) / Valense Acquah-Louis (Tema-2021) / Saiyid Kazmi (saiyidmkazmi)  / Debra Potts (dschoen24)**
 
 [CLICK HERE TO DOWNLOAD SLIDE DECK](/Presentation) 
-
+[CLUSTERING AND PREDICTION CODE BANK](/Cluster_Model_Code) 
 
 ## Objective
 * The essence of this project is incorporating the magic of Machine Learning in the realm of stock analysis, a daunting task itself. Investing in stocks continues to be risky because of their unpredictable nature. Some factors that contibue to this uncertainity are human phycology, natural calamities, change in political scene, pandamic, war etc.
@@ -16,6 +16,40 @@ We will be doing a technical analysis for this project.
 Our final objective is to visualize the results of not only clustering stocks with similarities as well as predict and compare the results of our prediction against real-data. 
 
 * We will be using LSTM for our prediction model using time series data.
+
+### Goals
+1. Cluster stocks using machine learning given open, last, close, volume, etc
+2. Predict stock movement one day into the future using a time-series model
+3. Create an interactive APP to Predict Closing Price for any given stock 
+_______________________________________________________________________________________________________________________________________
+
+### Technologies Used
+
+- Python
+- Pandas 
+- Pandas Datareader
+- Tableau
+- Matplotlib
+- HTML/CSS/Bootstrap
+- JQuery
+- LSTM
+- TimeSeries
+- Scikit-Learn
+
+___________________________________________________________________________________________________________________________________________________
+
+### Data Source
+- Realtime Stock data from Yahoo Finance  
+- S&P500  
+- Nasdaq100   
+- Dow30  
+___________________________________________________________________________________________________________________________________________________
+
+### Please download this Repository and Run the app on your local server.
+___________________________________________________________________________________________________________________________________________________
+
+
+# Project Explained
 
 ## Time Series
 
@@ -112,7 +146,8 @@ The second data point is the first 121 days of data but not including the first.
 The third data point is the first 122 days of data but not including the first and second. And this pattern continues for all the dates of the given period (5+ years).
 
 
-[Click here for complete Code](/Cluster_Model_Code/Model_Create_Train_Save_Test_break_SBUX.ipynb) 
+[Click here for complete Code](/Cluster_Model_Code/Model_Create_Train_Save_Test_break_SBUX.ipynb)  
+
 **Data prep**  
 
 Read real-time data from Yahoo Finance into a Dataframe using Pandas Datareader.
