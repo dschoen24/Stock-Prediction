@@ -85,11 +85,61 @@ A scatter plot of the dataset with no outliers was plotted and clear clusters ca
 ![homepage 2021-10-30 175633](static/Images/SNPClusters_NO.png)
 ![homepage 2021-10-30 175633](static/Images/SNPClusters_O.png)
 
+</details>
+
+<details>
+<summary><strong><h2>Click here for Forecasting</h2></strong></summary>
+We built a LSTM model to predict next day closing price for a given stock.
+
+## Why LSTM?
+Traditionally, models like ARIMA (AutoRegressive Integrated Moving Average) has been used for time series analysis. ARIMA requires data to be stationary by removing trend and seasonality. LSTM, on the other hand, can work with non-stationary data and hence, its was our choice.
+
+## Source of Data  
+
+* We sourced our data from Yahoo Finance’s realtime stock price dataset using Pandas Datareader, a Python package that allows us to create a pandas DataFrame object by using various data sources from the internet. It is popularly used for working with realtime stock price datasets.
+Our model is built on using 5 years of data.
+
+* Used 120 days moving window. That means , the model takes in 120 days of close prices and predicts the closing price for 121st day.
+
+**Moving window explained:**  
+In our project, the first data point is the first 120 days of data.
+The second data point is the first 121 days of data but not including the first.
+The third data point is the first 122 days of data but not including the first and second. And this pattern continues for all the dates of the given period (5+ years).
+
+**Data prep**  
+
+Reads real-time data from Yahoo Finance and read it into a Dataframe using Pandas Datareader.
+Checked to make sure Date is index.
+Checked for nulls and sort data on Date(index) just to be sure it is in ascending order.
+Close price has been used for our analysis. 
+Isolated ‘Close’ Price from dataset and converted into an array.
+
+Performed adfuller test to check if our data is stationary or non-stationary. We are doing this to see how well the model would perform even on a non-stationary dataset.
+
+**Scale the data**  
+Split Data , we did a 75%, 25% split
+
+
+**Build X_train, y_train following moving window method**  
+#### convert X_train and y_train to numpy arrays for LSTM
+#### LSTM network expects a 3D input (No_of_Samples, number of time steps, and number of features) no_of_features = 1 (Close)
+
+X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
+
+**Build LSTM Model**  
+We built an LSTM with 2 layers, each with 50 nodes, a dropout layer, 1 dense layer and one output layer with one unit.
+Used 'adam' as optimizer, 'mean_squared_error' as loss function 
+Trained our Model
+
+After testing accuracy, we saved our model. 
+Then we built our test data set .
+
+Predicted price for X_test.
+Calculated root mean square error for both training and test data.
+Used scaler.inverse_transform to transform predictions .
+Compared predited close price with actual close price.
+Plotted training, test and actual data.
+Below is a quick demonstration of how our model has predicted.
 
 
 </details>
-
-
-
-
-
