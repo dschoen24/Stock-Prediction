@@ -44,7 +44,7 @@ ________________________________________________________________________________
 - Dow30  
 ___________________________________________________________________________________________________________________________________________________
 
-### Please download this Repository and Run the app on your local server.
+### Download this Repository and Run the app on your local server.
 ___________________________________________________________________________________________________________________________________________________
 
 
@@ -214,11 +214,14 @@ X_test = np.reshape(X_test, (X_test.shape[0],  X_test.shape[1], 1))
 Predicted price for X_test.
 Calculated root mean square error for both training and test data.
 Used scaler.inverse_transform to transform predictions .
-Compared predited close price with actual close price.
+Compared predited close price with actual close price.  
+
+![homepage 2021-10-30 175633](static/Images/pred_df.png)
+
 Plotted training, test and actual data.
 Below is a quick demonstration of how our model has predicted.
 
-![homepage 2021-10-30 175633](static/Images/PRED.png)
+![homepage 2021-10-30 175633](static/Images/SBUX.png)
 
 ![homepage 2021-10-30 175633](static/Images/webP.png)
 
@@ -280,3 +283,6 @@ When a scatter plot of the dataset with no outliers was plotted (One in the cent
 ![homepage 2021-10-30 175633](static/Images/clusters.png)
 <!-- ![homepage 2021-10-30 175633](static/Images/SNPClusters_NO.png)
 ![homepage 2021-10-30 175633](static/Images/SNPClusters_O.png) -->
+
+## Conclusion
+Stocks are inherently risky and difficult to predict, but with this analysis it can be concluded that ML technology can be used to diversify our portfolio by watching how groups of stocks are moving, whether they are moving uptrend or downtrend. By retraining and keeping our predictor model up to date, we can gain a resonable insight into how the next day's closing looks like.
