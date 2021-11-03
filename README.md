@@ -1,4 +1,4 @@
-## Stock Clustering and Prediction
+## Stock Clustering and Prediction - A Deep Learning Time Series Forecasting
 
 ____________________________________________________
 
@@ -15,7 +15,7 @@ ____________________________________________________
 We will be doing a technical analysis for this project.
 Our final objective is to visualize the results of not only clustering stocks with similarities as well as predict and compare the results of our prediction against real-data. 
 
-* We will be using LSTM for our prediction model using time series data.
+* For time series forcasting, we used LSTM, an artificial recurrent neural network (RNN) architecture used in the field of deep learning.
 
 ### Goals
 1. Cluster stocks using machine learning given open, last, close, volume, etc
